@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order-Bruno's Pizzeria</title>
+  <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+<header>
+  <div class="header" id="myHeader">
+<div class="topnav" id="myTopnav">
+  <h1 >Bruno's Pizzeria
+   <a href="features.html">Features</a>
+  <a href="register.html">Register</a>
+  <a class="active" href="ordernow.html">Order Now</a>
+</h1>
+</div>
+</div>
+<div class="title"><h1>ORDER NOW</h1></div>
+</header>
+<div class="info">
+ <form name="myForm" action="#" onsubmit="return validateForm()" method="post" >
+	<aside class="left"></aside>
+<div id="col-1">
+	<section>
+ 
+  <h1>Pickup or Delivery?</h1>
+  <ul>
+  <label for="pickup">Pickup&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+  <input type="radio" id="pickup" name="choice1" value="pickup" onclick="show1();" / checked>
+  <br>
+  <label for="delivery">Delivery&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+  <input type="radio" id="delivery" name="choice1" value="delivery" onclick="show2();" />
+  <br>
+  </ul>
+ <h1>Your Pizza Order</h1>
+		<input type="text" id="pizza_name" name="pizza_name" placeholder="1 Large Supreme">
+	
+</section>
+<div id="div1" class="hide">
+	<br>
+<h1>Delivery Address</h1>
+	<label>Address</label><br><br>
+	<input type="text" id="text1" name="adress"><br>
+	<label>Suburb</label><br><br>
+	<input type="text" id="text2"name="suburb"><br>
+	<label>Postcode</label><br><br>
+	<input type="number" id="text3"name="pcode"><br><br>
+
+</div>
+<section>
+	
+	<h1>Pay online or on pickup </h1>
+	<ul>
+  <label for="pickup">Pickup&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+  <input type="radio" id="onpickup" name="choice2" value="pickup" onclick="show3();" / checked>
+  <br>
+  <label for="online">Online&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+  <input type="radio" id="online" name="choice2" value="online" onclick="show4();" />
+  <br>
+  </ul>
+  <br><br><br><br>
+  <input type="button" class="button" value="Submit" onclick="validateForm();"/>
+
+</section>
+
+</div>
+<div id="col-2">
+	<section>
+		 <h1>Coustomer Details</h1>
+  
+	<label>Name</label><br><br>
+	<input type="text" name="fname" placeholder="Jhon Smith"><br>
+	<label>Email</label><br><br>
+	<input type="Email" name="mail" placeholder="example@example.com"><br>
+	<label>Contact Number</label><br><br>
+	<input type="text" name="pnumber" maxlength="10" placeholder="0777123456"><br>
+
+	</section>
+
+<section>
+	<h1>Billing Address</h1>
+	<div id="div2" class="hide">
+	<br>
+
+	<label>Same as Delivery Address</label>
+	<ul>
+	<label for="yes">Yes</label>	
+	<input type="radio" id="yes" name="answer" value="yes"onclick="valuechange();" />
+  <br>
+  <label for="no">No&nbsp;</label>
+  <input type="radio" id="no" name="answer" value="no" checked>
+  <br>
+	</ul>
+
+</div>
+	<label>Address</label><br><br>
+	<input type="text" id="Text1"name="adress1"><br>
+	<label>Suburb</label><br><br>
+	<input type="text" id="Text2" name="suburb1"><br>
+	<label>Postcode</label><br><br>
+	<input type="text" id="Text3"name="pcode1"><br><br>
+<div id="div3" class="hide">
+	<br>
+
+	<h1>Payment Information</h1>
+	<label>Full Name</label><br><br>
+	<input type="text" name="card_name" placeholder="Jhon Smith"><br>
+	<label>Credit Card</label><br><br>
+	<input type="text" name="cad_number" placeholder="1245 3478 9023 3751" maxlength="16"><br>
+	<label>Expiry</label><br><br>
+	<input type="month" id="start" name="start"min="2020-08" value ="2020-09"><br>
+	<label>CVV</label><br><br>
+	<input type="number" name="cvv" placeholder="323" maxlength="3"><br>
+
+</div>
+</section>
+</div>
+</form>
+</div>
+<script src="main.js"></script>
+</body>
+</html>
