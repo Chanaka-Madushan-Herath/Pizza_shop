@@ -15,7 +15,7 @@ function showSlides() {
   }
   slides[slideIndex-1].style.display = "block";
   dots[slideIndex-1].className += " active";
-  setTimeout(showSlides, 2000);
+  setTimeout(showSlides, 4000);
 }
 
 
@@ -70,8 +70,9 @@ Text3.value = Text3Value;
 }
 
 function validateForm() {
+	var  alertmessage="";
   if(onpickup.checked && pickup.checked){
-  var fields = ["pizza_name","fname","mail","pnumber","adress1","suburb1","pcode1"]
+  var fields = ["Order","Coustomer_Name","Coustomer_Email","Coustomer_Contact_number","Billing_Adress","Billing_Suburd","Billing_Pcode"]
 
   var i, l = fields.length;
   var fieldname;
@@ -79,11 +80,11 @@ function validateForm() {
     fieldname = fields[i];
   var x = document.forms["myForm"][fieldname].value;
   if (x == "" || x == null) {
-    alert(fieldname+" must be filled out");
-    return false;
+    alertmessage+="\n"+"Please enter "+fieldname;
   }}}
-  else if ( delivery.checked) {
-     var fields = ["adress","suburb","pcode"]
+
+  if ( delivery.checked) {
+     var fields = ["Delivery_Adress","Delivery_Suburd","Delivery_Pcode"]
 
   var a, b = fields.length;
   var fieldname;
@@ -91,13 +92,12 @@ function validateForm() {
     fieldname = fields[a];
   var c = document.forms["myForm"][fieldname].value;
   if (c == "" || c == null) {
-    alert(fieldname+" must be filled out");
-    return false;
+     alertmessage+="\n"+"Please enter "+fieldname;
   }
   }
   
 }
-else if (online.checked){
+if (online.checked){
    var fields = ["card_name","cad_number","cvv",]
 
   var d, e = fields.length;
@@ -106,9 +106,18 @@ else if (online.checked){
     var fieldname = fields[d];
   var f = document.forms["myForm"][fieldname].value;
   if (f == "" || f == null) {
-    alert(fieldname+" must be filled out");
-    return false;
+     alertmessage+="\n"+"Please enter "+fieldname;
   }
   }
 }
+if(alertmessage=="")
+        {
+            alertmessage=" Successfully orderd !!!!";
+            alert(alertmessage);
+            window.location.replace("index.html");
+        }
+        else
+        {
+            alert(alertmessage);
+        }
 }
