@@ -69,3 +69,46 @@ Text2.value = Text2Value;
 Text3.value = Text3Value; 
 }
 
+function validateForm() {
+  if(onpickup.checked && pickup.checked){
+  var fields = ["pizza_name","fname","mail","pnumber","adress1","suburb1","pcode1"]
+
+  var i, l = fields.length;
+  var fieldname;
+  for (i = 0; i < l; i++) {
+    fieldname = fields[i];
+  var x = document.forms["myForm"][fieldname].value;
+  if (x == "" || x == null) {
+    alert(fieldname+" must be filled out");
+    return false;
+  }}}
+  else if ( delivery.checked) {
+     var fields = ["adress","suburb","pcode"]
+
+  var a, b = fields.length;
+  var fieldname;
+  for (a = 0; a < b; a++) {
+    fieldname = fields[a];
+  var c = document.forms["myForm"][fieldname].value;
+  if (c == "" || c == null) {
+    alert(fieldname+" must be filled out");
+    return false;
+  }
+  }
+  
+}
+else if (online.checked){
+   var fields = ["card_name","cad_number","cvv",]
+
+  var d, e = fields.length;
+  var fieldname;
+  for (d = 0; d < e; d++) {
+    var fieldname = fields[d];
+  var f = document.forms["myForm"][fieldname].value;
+  if (f == "" || f == null) {
+    alert(fieldname+" must be filled out");
+    return false;
+  }
+  }
+}
+}
